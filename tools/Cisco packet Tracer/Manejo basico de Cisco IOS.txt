@@ -1,0 +1,67 @@
+Manejo basico de Cisco IOS
+
+Cisco IOS: sistema operativo de  red desarrollado y mantenido por Cisco Systems (empresa lider y pionera en el mercado de desarrollo de equipos de enrutamientos y conmutacion).
+
+Modos de configuracion  en Cisco IOS :
+
+1. usuario: es la capa inicial del OS, sirve para entrar al modo privilegiado.
+2. privilegiado: Es la capa de secundaria delos, sirve para ver configuraciones en el equipo, para guardar la configuracion en diferentes lugares y para hacer recovery para acceder al modo de configuracion global.
+3. configuracion global: Es la tercera capa del OS, es donde inicia demas niveles de configuracion.
+	3.1 interfaz: modod para configurar las interfaces de red
+	3.2 linea: modod para configurara la linea local y remota de accesos al equipo para configurararlo (console,aux y vty)
+	3.3 protocolos: para configurara los protocolos de enrutamiento,conmutacion, acl, firewall, etc. 
+
+apariencia: 
+
+modo ususario: 
+	nombre-equipo>
+modo privilegiado:
+	nombre -equipo#
+modo configuracion globnal 
+	nombre-equipo(config)#
+modo configuracion linea:
+	nombre-equipo (config-limne1)
+modo configuracion de interface:
+	nombre-equipo(config-if)#
+modo de configuracionn de protocolo (dependiendo del protocolo):
+	nombre-equipo(nombre-protocolo1)#
+nota: hay protocolos que no necesitan de un modo en si para configurarse,siempre y cuando se configuren en el modo de configuracion global.
+
+Comandos de acceso entre los modo de configuracion : 
+para entrar almodo privilegiado desde el modo usuario:
+	ENABLE
+	EN(abreviatura)
+del modo den privilegiado al modo de configuracion global 
+	configure termina
+	conf t (abreviatura )
+
+del modo de configuracion global al modo de configuracion linea
+	line console 0(para entrar a la configuracion de linea consola)
+
+	line aux 0 (para entrar a la configuracion de linea auxioliar)
+
+	line vty [numero-seccion] (para entrar a la configuracion de linea de seccion remota )
+
+del modo de configuracion global al modo de configuracion de interfaz
+	interface fastEthernet [id-interfaz]
+	int f[id-inbterfaz] (abreviatura)
+	int g [id-interfaz] (abreviatura)  
+del modo de configuracion global al modo de configuaracion de protocolo 
+	router [nombre-protocolo]
+	vlan [nombre on id]
+	switchport [configuraciones]
+	acl [configuraciones]
+	spanning-tree [configuraciones]
+	etc..
+para salir del modo actual al modo anterior 
+	exit
+para salir del modo actual y ir directamente aal modo privilegiado
+	end
+consideraciones finales:
+Al igual que en la terminal de comandos de otros sistema operativos, Cisco IOS permite copier y pegar texto y Tambien almacena un historial de ejecucion de comandos, los cuales podemos acceder con las teclas de direcciones (la flechita para arriba y para abajo). Ademas, Tambien existe un comando para visualizar el historial de los comandos y hasta para manipular la cantidad de comandos que se almacenar en la seccion actual
+
+Tambien se puede realizar consultas de ayuda con el comando help  
+
+
+nota:
+En ciertos escenarios, puedes cambiar de un modo de configuracion a otro modo de configuracion de manera directa, siempre y cuando estos modos esten dentro del modo de configuracion global. Para hacerlo, solo debes de colocar el comando para acceder al modo de configuracion deseado desde el modo de configuracion actual (sin la necesidad de salir del modo de configuracion actual primero antes de acceder al modo de configuracion deseado). I

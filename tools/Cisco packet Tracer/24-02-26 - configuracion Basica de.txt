@@ -1,0 +1,19 @@
+24-02-26 - configuracion Basica de Red Cisco (Routers y Switches) 
+
+Importante: para seguir estos pasos, debe de entrar al modo de configuracion global 
+
+ya estando en el modo de configuracion global, ejecuta los siguientes comandos:
+
+1.no ip domain-lookup: para evitar que el sistema se quede en un loop al escribir mal un comando 
+
+2. ip domain-name cyberclass.com: le establecemos un dominio el equipo (cyberclass en este ejemplo)
+
+3. host [nombre-apellido]: le colocamos un nombre al equipo
+
+4. enable secretr Cisco123@: habilitamos una contraseña de tipo secreta en el modo privilegiado (encriptado robusto)
+
+5.username [tu nombre] privilege 15 secret klk123#@: nos creamos un usuario con todo los privilegios y le asignamos una contraseña de tipo secreta (encriptado robusto )
+
+6.crypto key generate rsa: iniciamos la creación de una clave maestra para habilitar protocolo ssh en el equipo
+
+7.1024: cuando te pregunte de cuantos bytes quieres la clave de encriptación, digita 1024, luego preciona la tecla de enter   
